@@ -1,0 +1,321 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Users - Vendor Pre-QualificationTemplate</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.png" rel="icon">
+    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="~/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="~/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: NiceAdmin - v2.1.0
+    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center" style="height:75px;">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <div class="grid">
+                    <div class="row">
+                        <img src="assets/img/logo.png" alt="">
+                    </div>
+                    <div class="row align-items-center" style="text-align:center">
+                        <span class="d-none d-lg-block">GPD</span>
+                    </div>
+                </div>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+        <!--<div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div>-->
+        <!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+                <!--<li class="nav-item dropdown">
+
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell"></i>
+                    <span class="badge bg-primary badge-number">4</span>
+                </a>-->
+                <!-- End Notification Icon -->
+                <!-- End Notification Dropdown Items -->
+                <!--</li>--><!-- End Notification Nav -->
+                <!--<li class="nav-item dropdown">
+
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-chat-left-text"></i>
+                    <span class="badge bg-success badge-number">3</span>
+                </a>-->
+                <!-- End Messages Icon -->
+                <!-- End Messages Dropdown Items -->
+                <!--</li>--><!-- End Messages Nav -->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <!--<img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">-->
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                            <span>Finance Manager</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="Login.html">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <aside id="sidebar" class="sidebar">
+
+            <ul class="sidebar-nav" id="sidebar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="index.html">
+                        <i class="bi bi-grid"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li><!-- End Dashboard Nav -->
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#Features-Supplier" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-menu-button-wide"></i><span>Supplier</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="Features-Supplier" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="VPQ_Registration_Supplier.html" target="_blank">
+                                <i class="bi bi-circle"></i><span>Submit Vendor PreQualification Form</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li><!-- End Icons Nav -->
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#Features-Registration" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-journal-text"></i><span>Vendor PreQualification</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="Features-Registration" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="VPQ_Invite_New_Supplier.html">
+                                <i class="bi bi-circle"></i><span>Invite a New Supplier</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="VPQ_Application_Completion_Check.html">
+                                <i class="bi bi-circle"></i><span>Application Completion Check</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="VPQ_Reassign_Pending_Applications.html">
+                                <i class="bi bi-circle"></i><span>Re-assign Pending Applications</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="VPQ_Recall_From_Validator.html">
+                                <i class="bi bi-circle"></i><span>Recall from validator</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="VPQ_Reset_Ongoing_Reviewer.html">
+                                <i class="bi bi-circle"></i><span>Reset Ongoing Reviewer</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="VPQ_Review.html">
+                                <i class="bi bi-circle"></i><span>Pending Review</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#Features-Approval" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-award"></i><span>Vendor Validation</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="Features-Approval" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="VPQ_Search_Vendors_Approval.html">
+                                <i class="bi bi-circle"></i><span>Pending Validation</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#Features-Masters" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-book"></i><span>Masters</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="Features-Masters" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="VPQ_Commodity_Master.html">
+                                <i class="bi bi-circle"></i><span>Commodity List</span>
+                            </a>
+                        </li>
+                        <!--<li>
+                            <a href="Submit_Catalog_Request.html">
+                                <i class="bi bi-circle"></i><span>Other data keys for supplier search</span>
+                            </a>
+                        </li>-->
+                        <li>
+                            <a href="VPQ_Business_Veriticals_Master.html">
+                                <i class="bi bi-circle"></i><span>Business verticals</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#Features-Mapping" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-bricks"></i><span>Mapping</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="Features-Mapping" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="VPQ_Business_Vertical_Approver_Mapping.html">
+                                <i class="bi bi-circle"></i><span>Business Vertical Approver Mapping</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="VPQ_Business_Vertical_Commodity_Mapping.html">
+                                <i class="bi bi-circle"></i><span>Business Vertical Commodity Mapping</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#Features-User" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-person"></i><span>User Management</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="Features-User" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="VPQ_User_Master.html" class="active">
+                                <i class="bi bi-circle"></i><span>Users</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="VPQ_Role.html">
+                                <i class="bi bi-circle"></i><span>Role</span>
+                            </a>
+                        </li>
+                        <!--<li>
+                            <a href="Submit_Catalog_Request.html">
+                                <i class="bi bi-circle"></i><span>Role</span>
+                            </a>
+                        </li>-->
+                    </ul>
+                </li>
+
+                <!-- End Icons Nav -->
+
+
+
+            </ul>
+
+        </aside>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            
+            <!--<h1>List</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Pages</li>
+                    <li class="breadcrumb-item active">Blank</li>
+                </ol>
+            </nav>-->
+        </div><!-- End Page Title -->
+        @RenderBody()
+
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="~/vendor/php-email-form/validate.js"></script>
+    <script src="~/vendor/quill/quill.min.js"></script>
+    <script src="~/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="~/vendor/chart.js/chart.min.js"></script>
+    <script src="~/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/vendor/echarts/echarts.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

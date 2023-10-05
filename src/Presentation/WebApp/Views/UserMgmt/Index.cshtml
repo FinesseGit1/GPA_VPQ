@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Domain.ViewModel.UserMgmtViewModel>
+
+@{
+    Domain.ViewModel.UserMgmtViewModel firstItem = Model.First();
+    <table>
+        <tr>
+            <td><label asp-for="@firstItem.LoginId"></label> </td>
+            <td><input asp-for="@firstItem.LoginId" > </td>
+        </tr>
+        <tr>
+            <td><label asp-for="@firstItem.UserName"></label> </td>
+            <td><input asp-for="@firstItem.UserName"> </td>
+        </tr>
+        <tr>
+            <td><label asp-for="@firstItem.Email"></label> </td>
+            <td><input asp-for="@firstItem.Email"> </td>
+        </tr>        
+        <tr>
+            <td><label asp-for="@firstItem.Role"></label> </td>
+            <td><input asp-for="@firstItem.Role"> </td>
+        </tr>
+        <tr><td colspan="2"><button>Submit</button> &nbsp; <button>Reset</button> </td> </tr>
+    </table>
+
+
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>User Name</td>
+                <td>Email</td>
+                <td>Role</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int cnt = 1;
+            }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@cnt</td>
+                    <td>@item.UserName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Role</td>
+                </tr>
+
+
+                cnt++;
+
+            }
+        </tbody>
+    </table>
+}
+
+

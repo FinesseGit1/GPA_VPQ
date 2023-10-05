@@ -1,0 +1,339 @@
+﻿@model Domain.ViewModel.VendorInvitationFormViewModel
+@section Scripts {
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.1.min.js"></script>
+    @* <script>
+
+        $(document).ready(function () {
+            alert("This is 1st alert message box.");
+            countriesDrpDownBind();
+        });
+        function countriesDrpDownBind() {
+            alert("This is 2nd alert message box.");
+            var listName = "BusinessVertical";
+            //var url = _spPageContextInfo.webAbsoluteUrl;
+            var url = "https://localhost:7276/api/VendorInvitationForm/GetBusinessVertical";
+          //alert(url);
+            getListItems(listName, url, function (GetBusinessVertical) {
+               
+                var items = GetBusinessVertical.d.results;
+                alert("This is 3rd alert message box");
+                
+                var inputElement = '<select id="drpcountries"> <option  value="">Select</option>';
+                // Add all the new items
+                for (var i = 0; i < items.length; i++) {
+                   // alert("This is 3rd alert message box", + items[i].Title +);
+                    var BVM_Code = items[i].Title,
+                        BVM_Name = items[i].Title;
+                    inputElement += '<option value="' + BVM_Code + '"selected>' + BVM_Code + '</option>';
+
+                }
+                inputElement += '</select>';
+                $('#divisiondrp').append(inputElement);
+
+                $("#drpcountries").each(function () {
+                    $('option', this).each(function () {
+
+                        if ($(this).text() == 'Select') {
+                            $(this).attr('selected', 'selected')
+                        };
+                    });
+                });
+                // assign the change event to provide an alert of the selected option value
+                $('#drpcountries').on('change', function () {
+                    alert($(this).val());
+                });
+
+            }, function (GetBusinessVertical) {
+                alert("Ooops, an error occured. Please try again");
+            });
+        }
+        // READ operation
+        // listName: The name of the list you want to get items from
+        // siteurl: The url of the site that the list is in.
+        // success: The function to execute if the call is sucesfull
+        // failure: The function to execute if the call fails
+        function getListItems(listName, siteurl, success, failure) {
+            $.ajax({
+                url: siteurl + "/_api/VendorInvitationForm/GetBusinessVertical"
+                method: "GET",
+                headers: { "Accept": "application/json; odata=verbose" },
+                success: function (GetBusinessVertical) {
+                    success(GetBusinessVertical);
+                },
+                error: function (GetBusinessVertical) {
+                    failure(GetBusinessVertical);
+                }
+            });
+        }
+
+    </script> *@
+    
+}
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Vendor Invitation Form</h5>
+
+                    <!-- Vertical Form -->
+                    <form method="post" asp-controller="VendorInvitationForm" class="row g-3">
+                        <div class="col-12">
+                            <label for="inputNanme4" class="form-label">Supplier Name</label>
+                            <input type="text" class="form-control" asp-for="SupplierName" id="inputSupplierName">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputNanme4" class="form-label">Contact Person </label>
+                            @* <input type="text" class="form-control" id="inputNanme4"> *@
+                            <input type="text" class="form-control" asp-for="ContactPerson" id="inputContactPerson">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputNanme4" class="form-label">Supplier Email</label>
+                            @*  <input type="text" class="form-control" id="inputNanme4"> *@
+                            <input type="text" class="form-control" asp-for="SupplierEmail" id="inputSupplierEmail">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputNanme4" class="form-label">Supplier Mobile</label>
+                            @* <input type="text" class="form-control" id="inputNanme4"> *@
+                            <input type="text" class="form-control" asp-for="SupplierMobile" id="inputSupplierMobile">
+                        </div>
+
+                        <div class="col-6">
+                            <label for="inputNanme4" class="form-label">Project Name </label>
+                            @* <input type="text" class="form-control" id="inputNanme4"> *@
+                            <input type="text" class="form-control" asp-for="ProjectName" id="inputProjectName">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="inputNanme4" class="form-label">Initial Submition Deadline </label>
+                            @* <input type="date" class="form-control" id="inputNanme4"> *@
+                            <input type="text" class="form-control" asp-for="InitialSubmitionDeadline" id="inputInitialSubmitionDeadline">
+                        </div>
+
+                        <div class="col-12">
+                        BVertical
+                        <div id="divisiondrp"></div>
+                        </div>
+
+
+                        <div class="col-6">
+                            <label for="inputNanme4" class="form-label">GPD Owner</label>
+                            @*  <input type="text" class="form-control" id="inputNanme4" disabled value="Jafer Mehdi"> *@
+                            <input type="text" class="form-control" asp-for="GPDOwner" id="inputGPDOwner">
+                        </div>
+
+                        <div class="col-6">
+                            <label for="inputNanme4" class="form-label">Region </label>
+                            @* <input type="text" class="form-control" id="inputNanme4" disabled value="AFE - UAE"> *@
+                            <input type="text" class="form-control" asp-for="Region" id="inputRegion">
+                        </div>
+
+                        <div class="col-6">
+                            <legend class="col-form-label col-sm-12 pt-0">Business Vertical</legend>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    @*  @{
+                                    int cnt = 1;
+                                    }
+                                    @foreach (var item in Model)
+                                    {
+                                    <div class="col-6">
+                                    <div class="form-check">
+
+                                    <input class="form-check-input" type="checkbox" id="inputgridCheck1">
+                                    <label class="form-check-label" for="gridCheck1">
+                                    @item.SupplierName
+                                    </label>
+                                    </div>
+                                    </div>
+
+                                    cnt++;
+                                    } *@
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="inputText" class="col-sm-2 col-form-label">Commodity Name</label>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <textarea type="text" id="inputCommodityName" asp-for="CommodityName" class="form-control" style="height:150px;" readonly></textarea>
+
+                                        <!--<input type="text" class="form-control" value="">-->
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                            Search Commodity Name
+                                        </button>
+                                    </div>
+                                    <div class="modal fade" id="basicModal" tabindex="-1">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title"></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title"></h5>
+                                                                    <table class="table datatable">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th scope="col">#</th>
+                                                                                <th scope="col">Main Category</th>
+                                                                                <th scope="col">Sub Category</th>
+                                                                                <th scope="col">Commodity Code</th>
+                                                                                <th scope="col">Commodity Name</th>
+                                                                                <th scope="col">Select</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th scope="row">1</th>
+                                                                                <td>Soft FM</td>
+                                                                                <td>Manpower</td>
+                                                                                <td>81000003</td>
+                                                                                <td>Surveying Services</td>
+
+                                                                                <td><input class="form-check-input" type="checkbox" id="gridCheck2"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">2</th>
+                                                                                <td>IT Professional and Consultancy</td>
+                                                                                <td>IT Professional </td>
+                                                                                <td>81000006</td>
+                                                                                <td>IT Professional Services</td>
+                                                                                <td><input class="form-check-input" type="checkbox" id="gridCheck2"></td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <th scope="row">3</th>
+                                                                                <td>IT Professional and Consultancy</td>
+                                                                                <td>IT Consultancy</td>
+                                                                                <td>81000007</td>
+                                                                                <td>IT Consultancy Services</td>
+                                                                                <td><input class="form-check-input" type="checkbox" id="gridCheck2" checked></td>
+                                                                                <!--<td><button type="button" class="btn btn-success"><i class="bi bi-check-circle"></i></button></td>-->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">4</th>
+                                                                                <td>Staff & Commercial Vehicles, Workshop Machinery & Eqpt.</td>
+                                                                                <td>LMV, Trucks & Heavy Vehicle</td>
+                                                                                <td>14110001</td>
+                                                                                <td>Light Motor Vehicles-Office - Non-contracted</td>
+                                                                                <td><input class="form-check-input" type="checkbox" id="gridCheck2" checked></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">5</th>
+                                                                                <td>General Road Transport</td>
+                                                                                <td>Passenger Transport</td>
+                                                                                <td>78110000</td>
+                                                                                <td>Passenger transport (Bus Rental)</td>
+                                                                                <td><input class="form-check-input" type="checkbox" id="gridCheck2"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <nav aria-label="Page navigation example">
+                                                                        <ul class="pagination">
+                                                                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                                                        </ul>
+                                                                    </nav>
+                                                                    <!-- End Table with stripped rows -->
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End Basic Modal-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <br />
+                                <div class="row mb-3">
+                                    <label for="inputTime" class="col-sm-2 col-form-label">Supplier Form Guideline</label>
+                                    <div class="col-sm-10">
+                                        <textarea type="text" class="form-control" id="inputSupplierFormGuideline" asp-for="SupplierFormGuideline" style="height:150px;"></textarea>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <br />
+                                <div class="row mb-3">
+                                    <label for="inputTime" class="col-sm-2 col-form-label">Email Body</label>
+                                    <div class="col-sm-10">
+                                        <textarea type="text" class="form-control" asp-for="EmailBody" id="inputEmailBody" style="height:150px;">Preformatted text shall be available for modification</textarea>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" value="Save" class="btn btn-primary" asp-action="CreateVendorInvitation">Send To Supplier</button>
+                            @* <button type="submit" class="btn btn-primary">Send To Supplier</button> *@
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <br />
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="inputNanme4" class="form-label">Business User Name </label>
+                                        @*  <input type="text" class="form-control" id="inputNanme4"> *@
+                                        <input type="text" class="form-control" asp-for="BusinessUserName" id="inputBusinessUserName">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="inputNanme4" class="form-label">Business User Email </label>
+                                        @* <input type="text" class="form-control" id="inputNanme4"> *@
+                                        <input type="text" class="form-control" asp-for="BusinessUserEmail" id="inputBusinessUserEmail">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-center">
+
+                                    <button type="submit" class="btn btn-info" asp-action="CreateInvitation_Business_User">Assign To Business User</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form><!-- Vertical Form -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
